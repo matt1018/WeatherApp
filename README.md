@@ -4,13 +4,13 @@ Welcome to Matt Powell's Weather App
 
 This application was written in a few days (that were also loaded with other tasks) to demonstrate my coding style and ability.
 
-Overview
+# Overview
 This is an interesting application because it does not use any ActiveRecord models. The vision is that the user would enter their US Zipcode, and a weather forecast 
 would be displayed. I found a REST webservice from NOAA that looked like it would do the trick, so my vision is that I would call the webservice, load the resulting 
 hash from the returned JSON into the cache and then my view would parse through the data and show the various aspects of the weather forecast to the user. If the same
 zipcode was requested within 30 minutes, it would read the forecast from cache and display it for the user.
 
-How Far I Got
+# How Far I Got
 I quickly built a form to prompt the user for their zipcode. I validated that the zipcode was five numeric digits and wrote up some test cases to verify this.
 My testing was interesting because I couldn't rely on the ActiveRecord validation so ended up mimicking something similar. There is some cleaning up to do since my
 fetch method and my show method ended up being almost identical as the issue solidified in my mind. I also ended up re-using the basic form on both the home page
@@ -21,7 +21,7 @@ day I would be able to get it working, but I need to get a couple hours of sleep
 the parameters and it will return the XML for the forecast, so it looks like I could mimic their HTTP POSTS to get the proper results. My Web service calls were
 returning HTML that displayed the syntax for the interface, so obviously something was being missed at this point...most likely by me.
 
-What To Do Next
+# What To Do Next
 Obviously getting the NOAA Web Service calls to return actual XML is critical. Also, I noticed using their form interface for the web service, that it would return
 an error condition if the zip code had no data. For instance, my home zipcode does not return data, but the zipcode on the other side of town works. Before going
 live to the public, the app would have to handle error conditions like these gracefully and hopefully with some suggestions on how to avoid the error.
