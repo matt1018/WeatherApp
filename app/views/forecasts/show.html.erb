@@ -1,0 +1,8 @@
+<h1>Matt Powell's Weather Forecast App</h1>
+<%= render "form" %>
+<h2>Weather Forecast for zip code <%=@zipcode %></h2>
+<%- if @forecast_hash && @forecast_hash["from_cache?"]%>
+  <p class='cacheState'>From Cache</p>
+<% end %>
+
+

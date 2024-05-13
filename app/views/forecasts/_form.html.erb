@@ -1,0 +1,12 @@
+<%-if @errors && @errors.length > 0%>
+  <%- @errors.each do |error| %>
+    <p class='error'>
+      <%=error['message']%>
+    </p>
+  <% end %>
+<% end %>
+<%=form_with url: "/forecasts" do |form|%>
+  <%=form.label :zipcode, "Enter 5-digit US zipcode:"%>
+  <%=form.text_field :zipcode, :value => @zipcode %>
+  <%=form.submit "Get Weather Forecast"%>
+<% end %>
